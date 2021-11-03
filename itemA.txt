@@ -1,0 +1,49 @@
+1- Obtener el detalle completo de un vuelo determinado dado su nro_vuelo.
+
+Recuerso: vuelos.
+Metodo: GET.
+parametros get:--.
+parametros de recurso: vuelos,nro_vuelo,id_vuelo.
+URL: vuelos/num_vuelo/3
+
+
+2- Obtener todas las ciudades en las que la aerolínea tiene alcance.
+
+Recurso:vuelos.
+Metodo:GET.
+Parametros get:--.
+Parametros de recurso:vuelos,ciudad
+URL: vuelos/ciudades/
+
+3- Insertar un vuelo nuevo en el sistema.
+
+Recurso: vuelos.
+Metodo:POST.
+parametros get: --.
+parametros de recurso: nro_vuelo,fecha_salida,ciudad_origen,ciudad_destino,estado.
+URL:vuelos/
+
+4- Obtener todos los vuelos que aun no salieron (estado=”en espera”) 
+
+Recurso:vuelos.
+Metodo:GET.
+Parametros get:estado.
+Parametros de recurso:--
+URL: vuelos?estado=espera
+
+5- Obtener todos los vuelos entre dos ciudades para un día determinado
+
+Recurso:vuelos.
+Metodo:GET.
+Parametros get:--.
+Parametros de recurso:vuelos,ciudad_destino1,ciudad_destino2,fecha_salida.
+URL:vuelos/madrid/barcelona/10-10-21.
+
+6- Obtener todos los vuelos con destino a Barcelona.
+
+Recurso:vuelos.
+Metodo:GET.
+Parametros get:ciudad_destino.
+Parametros de recurso:--
+URL: vuelos?ciudad=barcelona.
+
