@@ -10,7 +10,7 @@ $router=new Router();
 
 //define tabla de ruteo
 $router->addRoute('vuelos/:NRO_VUELO', 'GET', 'apiController', 'obtenerVuelo');
-$router->addRoute('vuelos/ciudades', 'GET', 'apiController', 'obtenerCiudades');
+$router->addRoute('ciudades', 'GET', 'apiController', 'obtenerCiudades');
 $router->addRoute('vuelos', 'POST', 'apiController', 'insertarVuelo');
 $router->addRoute('vuelos', 'GET', 'apiController', 'obtenerAllVuelos');
 

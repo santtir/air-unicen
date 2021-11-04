@@ -42,4 +42,11 @@ class apiModel{
 
         return $vuelos;
     }
+
+    // 'SELECT v.id as ID, v.num_vuelo as Vuelo, v.fechaSalida as Fecha, c.nombre as Origen, d.nombre as Destino, v.estado as Estado 
+    //         FROM vuelo v 
+    //         INNER JOIN ciudad c 
+    //         ON v.ciudad_origen_fk= c.id_ciudad 
+    //         INNER JOIN ciudad d 
+    //         ON  v.ciudad_destino_fk= d.id_ciudad');
 }

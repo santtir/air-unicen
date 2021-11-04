@@ -13,7 +13,7 @@ class apiController{
 
     }
 
-    function obtenerVuelo($params=null){
+    /**function obtenerVuelo($params=null){
         $nro_vuelo=$this->model->obtenerVuelo($params[":NRO_VUELO"]);
         
         if(!empty($nro_vuelo)){
@@ -22,14 +22,14 @@ class apiController{
             return $this->view->response("vuelo no encontrado",404);
         }
        
-    }
+    }*/
 
     function obtenerCiudades($params=null){
-        if(empty($params)){
-            $ciudades=$this->model->obtenerCiudades();
+        
+        $ciudades=$this->model->obtenerCiudades();
 
-            return $this->view->response($ciudades,200);
-        }
+        return $this->view->response($ciudades,200);
+    
     }
 
     function getData(){
