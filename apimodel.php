@@ -35,11 +35,12 @@ class apiModel{
     }
 
     function obtenerVuelos(){
-        $query=$this->db->prepare('SELECT * FROM vuelo 
-        INNER JOIN ciudad 
-        ON vuelo.ciudad_origen_id=ciudad.id_ciudad 
-        INNER JOIN ciudad 
-        ON vuelo.ciudad_destino_id=ciudad.id_ciudad');
+        $query=$this->db->prepare('SELECT v.id_vuelo AS ID, v.nro_vuelo AS vuelo, v.fecha_salida AS fecha, c.nombre AS origen, d.nombre AS destino, v.estado AS estado
+         FROM vuelo v
+         INNER JOIN ciudad c
+         ON v.ciudad_origen_id=c.id_ciudad
+         INNER JOIN ciudad d
+         ON v.ciudad_destino_id=d.id_ciudad');
         
         $query->execute();
 
@@ -47,4 +48,19 @@ class apiModel{
 
         return $vuelos;
     }
+
+
 }
+
+//          INNER JOIN ciudad 
+//         ON vuelo.ciudad_origen_id=ciudad.id_ciudad 
+//         INNER JOIN ciudad 
+//         ON vuelo.ciudad_destino_id=ciudad.id_ciudad'
+
+
+// SELECT v.id_vuelo as ID, v.nro_vuelo as vuelo,v.fecha_salida as Fecha, c.nombre as origen,d.nombre as Destino,v.estado as Estado 
+// FROM vuelos v 
+//INNER JOIN ciudad c 
+// ON v.ciudad_origen_id_fk =c.id_ciudad 
+// INNER JOIN ciudad d 
+// ON v.ciudad_destino_id_fk=d.id_ciudad;
